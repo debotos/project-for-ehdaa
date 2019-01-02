@@ -19,14 +19,15 @@ import { withStyles } from '@material-ui/core/styles';
 
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
-import AddBox from '@material-ui/icons/AddBox';
-import Edit from '@material-ui/icons/Edit';
-import Details from '@material-ui/icons/Details';
-import Filter from '@material-ui/icons/Filter1Sharp';
+
+import { history } from '../App';
+import {
+	optionsTextArray,
+	optionsIconArray,
+	optionsRouteArray
+} from '../utils/drawerOptions';
 
 const drawerWidth = 240;
-const optionsTextArray = ['Add New Account', 'Edit', 'Details', 'Filter'];
-const optionsIconArray = [<AddBox />, <Edit />, <Details />, <Filter />];
 
 const styles = theme => ({
 	root: {
@@ -50,6 +51,11 @@ const styles = theme => ({
 	menuButton: {
 		marginRight: 20,
 		[theme.breakpoints.up('sm')]: {
+			display: 'none'
+		}
+	},
+	activeDrawerText: {
+		[theme.breakpoints.down('sm')]: {
 			display: 'none'
 		}
 	},
@@ -106,8 +112,7 @@ const styles = theme => ({
 
 class ResponsiveDrawer extends React.Component {
 	state = {
-		mobileOpen: false,
-		activeDrawer: optionsTextArray[0]
+		mobileOpen: false
 	};
 
 	handleDrawerToggle = () => {
@@ -115,8 +120,8 @@ class ResponsiveDrawer extends React.Component {
 	};
 
 	render() {
-		const { classes, theme } = this.props;
-		const { activeDrawer } = this.state;
+		const { classes, theme, to } = this.props;
+		const {} = this.state;
 
 		const drawer = (
 			<div>
@@ -136,14 +141,13 @@ class ResponsiveDrawer extends React.Component {
 				<Divider />
 				<List>
 					{optionsTextArray.map((text, index) => {
-						let active = activeDrawer === text ? true : false;
 						return (
 							<ListItem
-								selected={active}
+								selected={index === optionsRouteArray.indexOf(to)}
 								button
 								key={index}
 								onClick={() => {
-									this.setState({ activeDrawer: text });
+									history.push(optionsRouteArray[index]);
 									this.setState({ mobileOpen: false });
 								}}
 							>
@@ -171,9 +175,17 @@ class ResponsiveDrawer extends React.Component {
 							<MenuIcon />
 						</IconButton>
 						{/* Show the active drawer title in the appbar */}
-						{/* <Typography variant="h6" color="inherit" noWrap>
-							{activeDrawer}
-						</Typography> */}
+						<Hidden xsDown implementation="css">
+							<Typography
+								variant="h6"
+								color="inherit"
+								noWrap
+								className={classes.activeDrawerText}
+							>
+								{optionsTextArray[optionsRouteArray.indexOf(to)]}
+							</Typography>
+						</Hidden>
+
 						<div className={classes.grow} />
 						<div className={classes.search}>
 							<div className={classes.searchIcon}>
@@ -219,36 +231,7 @@ class ResponsiveDrawer extends React.Component {
 				</nav>
 				<main className={classes.content}>
 					<div className={classes.toolbar} />
-					<Typography paragraph>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-						dolor purus non enim praesent elementum facilisis leo vel. Risus at
-						ultrices mi tempus imperdiet. Semper risus in hendrerit gravida
-						rutrum quisque non tellus. Convallis convallis tellus id interdum
-						velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean
-						sed adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-						integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-						eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-						quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-						vivamus at augue. At augue eget arcu dictum varius duis at
-						consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-						donec massa sapien faucibus et molestie ac.
-					</Typography>
-					<Typography paragraph>
-						Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-						ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-						elementum integer enim neque volutpat ac tincidunt. Ornare
-						suspendisse sed nisi lacus sed viverra tellus. Purus sit amet
-						volutpat consequat mauris. Elementum eu facilisis sed odio morbi.
-						Euismod lacinia at quis risus sed vulputate odio. Morbi tincidunt
-						ornare massa eget egestas purus viverra accumsan in. In hendrerit
-						gravida rutrum quisque non tellus orci ac. Pellentesque nec nam
-						aliquam sem et tortor. Habitant morbi tristique senectus et.
-						Adipiscing elit duis tristique sollicitudin nibh sit. Ornare aenean
-						euismod elementum nisi quis eleifend. Commodo viverra maecenas
-						accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam
-						ultrices sagittis orci a.
-					</Typography>
+					<div className="content">{this.props.children}</div>
 				</main>
 			</div>
 		);
