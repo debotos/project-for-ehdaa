@@ -14,7 +14,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -121,7 +120,7 @@ class ResponsiveDrawer extends React.Component {
 
 	render() {
 		const { classes, theme, to } = this.props;
-		const {} = this.state;
+		// const {} = this.state;
 
 		const drawer = (
 			<div>
@@ -142,22 +141,23 @@ class ResponsiveDrawer extends React.Component {
 				<List>
 					{optionsTextArray.map((text, index) => {
 						return (
-							<ListItem
-								selected={index === optionsRouteArray.indexOf(to)}
-								button
-								key={index}
-								onClick={() => {
-									history.push(optionsRouteArray[index]);
-									this.setState({ mobileOpen: false });
-								}}
-							>
-								<ListItemIcon>{optionsIconArray[index]}</ListItemIcon>
-								<ListItemText primary={text} />
-							</ListItem>
+							<div key={index}>
+								{index === 5 && <Divider />}
+								<ListItem
+									selected={index === optionsRouteArray.indexOf(to)}
+									button
+									onClick={() => {
+										history.push(optionsRouteArray[index]);
+										this.setState({ mobileOpen: false });
+									}}
+								>
+									<ListItemIcon>{optionsIconArray[index]}</ListItemIcon>
+									<ListItemText primary={text} />
+								</ListItem>
+							</div>
 						);
 					})}
 				</List>
-				{/* <Divider /> */}
 			</div>
 		);
 

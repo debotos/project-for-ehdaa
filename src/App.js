@@ -10,6 +10,7 @@ import NewAccount from './pages/NewAccount';
 import Edit from './pages/Edit';
 import Details from './pages/Details';
 import Filter from './pages/Filter';
+import Reports from './pages/Reports';
 
 // browser history
 export const history = createHistory();
@@ -48,6 +49,11 @@ export default class App extends Component {
 						exact
 						path="/filter"
 						component={props => withLayout(Filter, props, '/filter')}
+					/>
+					<Route
+						exact
+						path="/reports"
+						component={props => withLayout(Reports, props, '/reports')}
 					/>
 					{/* Add Other Routes below also add in the hoc/layout*/}
 					<Redirect to="/account" />

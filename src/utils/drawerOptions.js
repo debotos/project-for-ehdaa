@@ -4,6 +4,7 @@ import AddBox from '@material-ui/icons/AddBox';
 import Edit from '@material-ui/icons/Edit';
 import Details from '@material-ui/icons/Details';
 import Filter from '@material-ui/icons/Filter1Sharp';
+import Reports from '@material-ui/icons/TableChart';
 
 // Index is very important here!
 // So, if you are removing one item then
@@ -16,7 +17,8 @@ export const optionsTextArray = [
 	'Add New Account',
 	'Edit',
 	'Details',
-	'Filter'
+	'Filter',
+	'Reports'
 ];
 
 export const optionsIconArray = [
@@ -24,7 +26,8 @@ export const optionsIconArray = [
 	<AddBox />,
 	<Edit />,
 	<Details />,
-	<Filter />
+	<Filter />,
+	<Reports />
 ];
 
 export const optionsRouteArray = [
@@ -32,5 +35,6 @@ export const optionsRouteArray = [
 	'/new',
 	'/edit',
 	'/details',
-	'/filter'
+	'/filter',
+	'/reports'
 ];

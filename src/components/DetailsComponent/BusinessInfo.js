@@ -19,40 +19,61 @@ const styles = theme => ({
 	}
 });
 
-let id = 0;
-function createData(name, numberBranches, accountStatus, id, date) {
-	id += 1;
-	return { id, name, numberBranches, accountStatus, id, date };
+let serial = 0;
+function createData(
+	subscribeValid,
+	phone,
+	email,
+	person,
+	o_n,
+	numberBranch,
+	userName,
+	accountStatus
+) {
+	serial += 1;
+	return {
+		serial,
+		subscribeValid,
+		phone,
+		email,
+		person,
+		o_n,
+		numberBranch,
+		userName,
+		accountStatus
+	};
 }
 // populate with real data
 const rows = [
 	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
+		'DBBL',
+		'+8801790015380',
+		'debotosdas@gmail.com',
+		'Debotos Das',
+		'Yes O/N',
+		'DBBL Barisal',
+		'debotos',
+		'Active'
 	),
 	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
+		'DBBL',
+		'+8801790015380',
+		'debotosdas@gmail.com',
+		'Debotos Das',
+		'Yes O/N',
+		'DBBL Barisal',
+		'debotos',
+		'Active'
 	),
 	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
-	),
-	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
+		'DBBL',
+		'+8801790015380',
+		'debotosdas@gmail.com',
+		'Debotos Das',
+		'Yes O/N',
+		'DBBL Barisal',
+		'debotos',
+		'Active'
 	)
 ];
 
@@ -64,24 +85,28 @@ function SimpleTable(props) {
 			<Table className={classes.table}>
 				<TableHead>
 					<TableRow>
-						<TableCell>Organization Name</TableCell>
-						<TableCell align="right">Number Branches</TableCell>
-						<TableCell align="right">Account Status</TableCell>
-						<TableCell align="right">ID Account</TableCell>
-						<TableCell align="right">Valid Date</TableCell>
+						<TableCell>Subscribe Valid</TableCell>
+						<TableCell>Phone</TableCell>
+						<TableCell>Email</TableCell>
+						<TableCell>Person</TableCell>
+						<TableCell>O/N</TableCell>
+						<TableCell>Number Branch</TableCell>
+						<TableCell>User Name</TableCell>
+						<TableCell>Account Status</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{rows.map(row => {
 						return (
-							<TableRow key={row.id}>
-								<TableCell component="th" scope="row">
-									{row.name}
-								</TableCell>
-								<TableCell align="right">{row.numberBranches}</TableCell>
-								<TableCell align="right">{row.accountStatus}</TableCell>
-								<TableCell align="right">{row.id}</TableCell>
-								<TableCell align="right">{row.date}</TableCell>
+							<TableRow key={row.serial}>
+								<TableCell>{row.subscribeValid}</TableCell>
+								<TableCell>{row.phone}</TableCell>
+								<TableCell>{row.email}</TableCell>
+								<TableCell>{row.person}</TableCell>
+								<TableCell>{row.o_n}</TableCell>
+								<TableCell>{row.numberBranch}</TableCell>
+								<TableCell>{row.userName}</TableCell>
+								<TableCell>{row.accountStatus}</TableCell>
 							</TableRow>
 						);
 					})}

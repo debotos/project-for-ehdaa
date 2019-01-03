@@ -19,41 +19,16 @@ const styles = theme => ({
 	}
 });
 
-let id = 0;
-function createData(name, numberBranches, accountStatus, id, date) {
-	id += 1;
-	return { id, name, numberBranches, accountStatus, id, date };
+let serial = 0;
+function createData(role, branches, info) {
+	serial += 1;
+	return { serial, role, branches, info };
 }
 // populate with real data
 const rows = [
-	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
-	),
-	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
-	),
-	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
-	),
-	createData(
-		'Duch Bangla Bank',
-		'DBBL(109)',
-		'Active',
-		'12710578161',
-		new Date().toLocaleDateString()
-	)
+	createData('Junior Developer', 'Barisal Sodor', 'Full Stack Developer'),
+	createData('Junior Developer', 'Barisal Sodor', 'Full Stack Developer'),
+	createData('Junior Developer', 'Barisal Sodor', 'Full Stack Developer')
 ];
 
 function SimpleTable(props) {
@@ -64,24 +39,20 @@ function SimpleTable(props) {
 			<Table className={classes.table}>
 				<TableHead>
 					<TableRow>
-						<TableCell>Organization Name</TableCell>
-						<TableCell align="right">Number Branches</TableCell>
-						<TableCell align="right">Account Status</TableCell>
-						<TableCell align="right">ID Account</TableCell>
-						<TableCell align="right">Valid Date</TableCell>
+						<TableCell>Role</TableCell>
+						<TableCell>Branches</TableCell>
+						<TableCell>Info</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{rows.map(row => {
 						return (
-							<TableRow key={row.id}>
+							<TableRow key={row.serial}>
 								<TableCell component="th" scope="row">
-									{row.name}
+									{row.role}
 								</TableCell>
-								<TableCell align="right">{row.numberBranches}</TableCell>
-								<TableCell align="right">{row.accountStatus}</TableCell>
-								<TableCell align="right">{row.id}</TableCell>
-								<TableCell align="right">{row.date}</TableCell>
+								<TableCell>{row.branches}</TableCell>
+								<TableCell>{row.info}</TableCell>
 							</TableRow>
 						);
 					})}

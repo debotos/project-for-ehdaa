@@ -19,10 +19,10 @@ const styles = theme => ({
 	}
 });
 
-let id = 0;
+let serial = 0;
 function createData(name, numberBranches, accountStatus, id, date) {
-	id += 1;
-	return { id, name, numberBranches, accountStatus, id, date };
+	serial += 1;
+	return { serial, name, numberBranches, accountStatus, id, date };
 }
 // populate with real data
 const rows = [
@@ -74,7 +74,7 @@ function SimpleTable(props) {
 				<TableBody>
 					{rows.map(row => {
 						return (
-							<TableRow key={row.id}>
+							<TableRow key={row.serial}>
 								<TableCell component="th" scope="row">
 									{row.name}
 								</TableCell>
