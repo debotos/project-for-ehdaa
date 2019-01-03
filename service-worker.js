@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/project-of-ehdaa/precache-manifest.a0637b782de22e50fd43677f5e6f2061.js"
+  "/project-for-ehdaa/precache-manifest.e5408234d194d009d168d9d9550365f2.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/project-of-ehdaa/index.html", {
+workbox.routing.registerNavigationRoute("/project-for-ehdaa/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

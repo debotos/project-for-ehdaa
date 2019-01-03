@@ -1,13 +1,13 @@
 {
-  "main.css": "/project-of-ehdaa/static/css/main.7244af7a.chunk.css",
-  "main.js": "/project-of-ehdaa/static/js/main.5b5f8725.chunk.js",
-  "main.js.map": "/project-of-ehdaa/static/js/main.5b5f8725.chunk.js.map",
-  "static/js/1.2b126099.chunk.js": "/project-of-ehdaa/static/js/1.2b126099.chunk.js",
-  "static/js/1.2b126099.chunk.js.map": "/project-of-ehdaa/static/js/1.2b126099.chunk.js.map",
-  "runtime~main.js": "/project-of-ehdaa/static/js/runtime~main.d1954560.js",
-  "runtime~main.js.map": "/project-of-ehdaa/static/js/runtime~main.d1954560.js.map",
-  "static/css/main.7244af7a.chunk.css.map": "/project-of-ehdaa/static/css/main.7244af7a.chunk.css.map",
-  "index.html": "/project-of-ehdaa/index.html",
-  "precache-manifest.a0637b782de22e50fd43677f5e6f2061.js": "/project-of-ehdaa/precache-manifest.a0637b782de22e50fd43677f5e6f2061.js",
-  "service-worker.js": "/project-of-ehdaa/service-worker.js"
+  "main.css": "/project-for-ehdaa/static/css/main.7244af7a.chunk.css",
+  "main.js": "/project-for-ehdaa/static/js/main.4db4561f.chunk.js",
+  "main.js.map": "/project-for-ehdaa/static/js/main.4db4561f.chunk.js.map",
+  "static/js/1.2b126099.chunk.js": "/project-for-ehdaa/static/js/1.2b126099.chunk.js",
+  "static/js/1.2b126099.chunk.js.map": "/project-for-ehdaa/static/js/1.2b126099.chunk.js.map",
+  "runtime~main.js": "/project-for-ehdaa/static/js/runtime~main.d43b6e93.js",
+  "runtime~main.js.map": "/project-for-ehdaa/static/js/runtime~main.d43b6e93.js.map",
+  "static/css/main.7244af7a.chunk.css.map": "/project-for-ehdaa/static/css/main.7244af7a.chunk.css.map",
+  "index.html": "/project-for-ehdaa/index.html",
+  "precache-manifest.e5408234d194d009d168d9d9550365f2.js": "/project-for-ehdaa/precache-manifest.e5408234d194d009d168d9d9550365f2.js",
+  "service-worker.js": "/project-for-ehdaa/service-worker.js"
 }
