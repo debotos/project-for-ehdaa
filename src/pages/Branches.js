@@ -4,8 +4,8 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/core/styles';
 
-import TicketTable from '../components/TicketComponent/TicketTable';
-import AddTicketDialog from '../components/TicketComponent/AddTicketDialog';
+import BranchesTable from '../components/BranchesComponent/BranchesTable';
+import AddBranchesDialog from '../components/BranchesComponent/AddBranchesDialog';
 
 const styles = theme => ({
 	margin: {
@@ -16,7 +16,7 @@ const styles = theme => ({
 	}
 });
 
-class Ticket extends Component {
+class Branches extends Component {
 	state = {
 		open: false
 	};
@@ -42,10 +42,10 @@ class Ticket extends Component {
 					onClick={this.handleClickOpen}
 				>
 					<AddIcon />
-					Add New Ticket
+					Add New Branch
 				</Fab>
-				<TicketTable />
-				<AddTicketDialog
+				<BranchesTable />
+				<AddBranchesDialog
 					open={this.state.open}
 					handleClose={this.handleClose}
 				/>
@@ -54,8 +54,8 @@ class Ticket extends Component {
 	}
 }
 
-Ticket.propTypes = {
+Branches.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Ticket);
+export default withStyles(styles)(Branches);

@@ -81,7 +81,7 @@ class UsersTable extends Component {
 							<TableCell align="left">Email</TableCell>
 							<TableCell align="left">Password</TableCell>
 							<TableCell align="left">Status</TableCell>
-							<TableCell>Actions</TableCell>
+							<TableCell align="center">Actions</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -94,7 +94,7 @@ class UsersTable extends Component {
 									<TableCell align="left">{row.email}</TableCell>
 									<TableCell align="left">{row.password}</TableCell>
 									<TableCell align="left">{row.status}</TableCell>
-									<TableCell>{row.actions}</TableCell>
+									<TableCell align="center">{row.actions}</TableCell>
 								</TableRow>
 							);
 						})}

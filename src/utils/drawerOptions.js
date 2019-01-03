@@ -8,6 +8,7 @@ import Reports from '@material-ui/icons/TableChart';
 import Role from '@material-ui/icons/Whatshot';
 import Users from '@material-ui/icons/PeopleOutline';
 import Ticket from '@material-ui/icons/HowToVote';
+import Branches from '@material-ui/icons/Equalizer';
 
 // Index is very important here!
 // So, if you are removing one item then
@@ -24,7 +25,8 @@ export const optionsTextArray = [
 	'Reports',
 	'Role',
 	'Users',
-	'Ticket'
+	'Ticket',
+	'Branches'
 ];
 
 export const optionsIconArray = [
@@ -36,7 +38,8 @@ export const optionsIconArray = [
 	<Reports />,
 	<Role />,
 	<Users />,
-	<Ticket />
+	<Ticket />,
+	<Branches />
 ];
 
 export const optionsRouteArray = [
@@ -48,5 +51,6 @@ export const optionsRouteArray = [
 	'/reports',
 	'/role',
 	'/users',
-	'/ticket'
+	'/ticket',
+	'/branches'
 ];
