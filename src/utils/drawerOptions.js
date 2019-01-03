@@ -5,6 +5,9 @@ import Edit from '@material-ui/icons/Edit';
 import Details from '@material-ui/icons/Details';
 import Filter from '@material-ui/icons/Filter1Sharp';
 import Reports from '@material-ui/icons/TableChart';
+import Role from '@material-ui/icons/Whatshot';
+import Users from '@material-ui/icons/PeopleOutline';
+import Ticket from '@material-ui/icons/HowToVote';
 
 // Index is very important here!
 // So, if you are removing one item then
@@ -18,7 +21,10 @@ export const optionsTextArray = [
 	'Edit',
 	'Details',
 	'Filter',
-	'Reports'
+	'Reports',
+	'Role',
+	'Users',
+	'Ticket'
 ];
 
 export const optionsIconArray = [
@@ -27,7 +33,10 @@ export const optionsIconArray = [
 	<Edit />,
 	<Details />,
 	<Filter />,
-	<Reports />
+	<Reports />,
+	<Role />,
+	<Users />,
+	<Ticket />
 ];
 
 export const optionsRouteArray = [
@@ -36,5 +45,8 @@ export const optionsRouteArray = [
 	'/edit',
 	'/details',
 	'/filter',
-	'/reports'
+	'/reports',
+	'/role',
+	'/users',
+	'/ticket'
 ];

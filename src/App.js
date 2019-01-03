@@ -11,6 +11,9 @@ import Edit from './pages/Edit';
 import Details from './pages/Details';
 import Filter from './pages/Filter';
 import Reports from './pages/Reports';
+import Role from './pages/Role';
+import Users from './pages/Users';
+import Ticket from './pages/Ticket';
 
 // browser history
 export const history = createHistory();
@@ -54,6 +57,21 @@ export default class App extends Component {
 						exact
 						path="/reports"
 						component={props => withLayout(Reports, props, '/reports')}
+					/>
+					<Route
+						exact
+						path="/role"
+						component={props => withLayout(Role, props, '/role')}
+					/>
+					<Route
+						exact
+						path="/users"
+						component={props => withLayout(Users, props, '/users')}
+					/>
+					<Route
+						exact
+						path="/ticket"
+						component={props => withLayout(Ticket, props, '/ticket')}
 					/>
 					{/* Add Other Routes below also add in the hoc/layout*/}
 					<Redirect to="/account" />
