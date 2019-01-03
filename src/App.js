@@ -15,6 +15,7 @@ import Role from './pages/Role';
 import Users from './pages/Users';
 import Ticket from './pages/Ticket';
 import Branches from './pages/Branches';
+import Workflow from './pages/Workflow';
 
 // browser history
 export const history = createHistory();
@@ -78,6 +79,11 @@ export default class App extends Component {
 						exact
 						path="/branches"
 						component={props => withLayout(Branches, props, '/branches')}
+					/>
+					<Route
+						exact
+						path="/workflow"
+						component={props => withLayout(Workflow, props, '/workflow')}
 					/>
 					{/* Add Other Routes below also add in the hoc/layout*/}
 					<Redirect to="/account" />

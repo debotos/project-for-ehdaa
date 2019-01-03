@@ -9,8 +9,9 @@ import Role from '@material-ui/icons/Whatshot';
 import Users from '@material-ui/icons/PeopleOutline';
 import Ticket from '@material-ui/icons/HowToVote';
 import Branches from '@material-ui/icons/Equalizer';
+import Workflow from '@material-ui/icons/Work';
 
-// Index is very important here!
+// Index/position is very important here!
 // So, if you are removing one item then
 // remove the corresponding index element
 // from other 3 array
@@ -26,7 +27,8 @@ export const optionsTextArray = [
 	'Role',
 	'Users',
 	'Ticket',
-	'Branches'
+	'Branches',
+	'Workflow'
 ];
 
 export const optionsIconArray = [
@@ -39,7 +41,8 @@ export const optionsIconArray = [
 	<Role />,
 	<Users />,
 	<Ticket />,
-	<Branches />
+	<Branches />,
+	<Workflow />
 ];
 
 export const optionsRouteArray = [
@@ -52,5 +55,6 @@ export const optionsRouteArray = [
 	'/role',
 	'/users',
 	'/ticket',
-	'/branches'
+	'/branches',
+	'/workflow'
 ];
